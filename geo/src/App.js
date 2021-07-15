@@ -15,7 +15,7 @@ function App() {
   navigator.geolocation.getCurrentPosition((position) => {
     setLat(position.coords.latitude)
     setLong(position.coords.longitude)
-  }, error, {enableHighAccuracy: true})
+  }, error, {enableHighAccuracy: true, maximumAge: 0})
 
   //check if allow location is blocked
   useEffect( () => {
@@ -33,12 +33,12 @@ function App() {
     });}, [])
 
   return (
-    <div className="App">
-      <h2>Getting Geo-Location Co-ordinates</h2>
-      <h4>Latitude: {lat}</h4> 
-      <h4>Longitude: {long}</h4> 
+    <div className="App" style={{backgroundColor: '#FFC947', width: '100%', height: '100%', margin: '0'}}>
+      <h1 style={{color: '#23049D'}}>Getting Super-Accurate Current Geo Cordinates</h1>
+      <h2 style={{color: '#28527A'}}>Latitude: {lat}</h2> 
+      <h2 style={{color: '#28527A'}}>Longitude: {long}</h2> 
       <br/>
-      <h4>Location State: {locationState}</h4> 
+      <h2 style={{color: '#28527A'}}>Location State: {locationState}</h2> 
     </div>
   );
 }

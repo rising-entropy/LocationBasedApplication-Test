@@ -17,14 +17,14 @@ def haversine(lon1, lat1, lon2, lat2):
     return c * r
 
 center_point = [{'lat': 18.6329585, 'lng': 73.8058887}]
-test_point = [{'lat': 18.63063063063063, 'lng': 73.81396316384317}]
+test_point = [{'lat': 18.6143027, 'lng': 73.7991246}]
 
 lat1 = center_point[0]['lat']
 lon1 = center_point[0]['lng']
 lat2 = test_point[0]['lat']
 lon2 = test_point[0]['lng']
 
-radius = 1.00 # in kilometer
+radius = 3.00 # in kilometer
 
 a = haversine(lon1, lat1, lon2, lat2)
 
