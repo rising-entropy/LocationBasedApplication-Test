@@ -3,6 +3,10 @@ import {useState, useEffect} from 'react'
 
 function App() {
 
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+
   const [lat, setLat] = useState("");
   const [long, setLong] = useState("");
   const [locationState, setLocationState] = useState([]);
@@ -11,7 +15,7 @@ function App() {
   navigator.geolocation.getCurrentPosition((position) => {
     setLat(position.coords.latitude)
     setLong(position.coords.longitude)
-  })
+  }, error, {enableHighAccuracy: true})
 
   //check if allow location is blocked
   useEffect( () => {
